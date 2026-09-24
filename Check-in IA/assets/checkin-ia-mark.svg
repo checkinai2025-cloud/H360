@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" role="img" aria-labelledby="title">
+  <title id="title">Check-in IA</title>
+  <defs>
+    <linearGradient id="check" x1="18" y1="110" x2="267" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#444AE2"/>
+      <stop offset="0.5" stop-color="#0A173B"/>
+      <stop offset="1" stop-color="#8C83FA"/>
+    </linearGradient>
+    <linearGradient id="robot" x1="184" y1="22" x2="254" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#27348E"/>
+      <stop offset="1" stop-color="#071333"/>
+    </linearGradient>
+  </defs>
+  <path d="M41 119 121 199 249 71" fill="none" stroke="url(#check)" stroke-width="55" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="211" y="14" width="10" height="18" rx="5" fill="#444AE2"/>
+  <circle cx="216" cy="13" r="13" fill="#5D5DED"/>
+  <rect x="175" y="46" width="12" height="26" rx="6" fill="#8C83FA"/>
+  <rect x="251" y="46" width="12" height="26" rx="6" fill="#8C83FA"/>
+  <rect x="183" y="31" width="72" height="53" rx="17" fill="url(#robot)"/>
+  <circle cx="204" cy="58" r="7" fill="#fff"/>
+  <circle cx="234" cy="58" r="7" fill="#fff"/>
+</svg>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a173a">
+  <meta name="description" content="Conheça o programa de parceiros e indicação da Check-in IA para hotelaria e hospedagem.">
+  <title>Programa de Parceiros | Check-in IA</title>
+  <link rel="icon" href="assets/checkin-ia-identity.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a173a;
+      --navy-soft: #172550;
+      --brand: #343ab8;
+      --violet: #7771ed;
+      --lavender: #f1efff;
+      --gold: #d9b68a;
+      --ink-muted: #52607e;
+      --line: #dfe3f0;
+      --paper: #fff;
+      font-family: Poppins, Arial, sans-serif;
+      color: var(--navy);
+      background: var(--paper);
+      scroll-behavior: smooth;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-width: 320px; }
+    body { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .wrap { width: min(100% - 48px, 1160px); margin-inline: auto; }
+    .eyebrow { margin: 0 0 16px; color: var(--brand); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .section-heading { max-width: 720px; margin: 0; font-size: clamp(29px, 3vw, 44px); line-height: 1.14; font-weight: 700; }
+    .section-lead { max-width: 690px; margin: 19px 0 0; color: var(--ink-muted); font-size: 16px; line-height: 1.75; }
+
+    .site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand-link { width: 186px; height: 56px; flex: none; overflow: hidden; position: relative; }
+    .brand-link img { position: absolute; width: 241px; max-width: none; height: auto; left: -25px; top: -35px; }
+    .header-actions { display: flex; align-items: center; gap: 25px; }
+    .header-actions a { font-size: 13px; font-weight: 600; transition: color .2s ease; }
+    .header-actions a:hover { color: var(--brand); }
+    .header-actions .header-cta { padding: 11px 17px; color: var(--paper); background: var(--navy); border: 1px solid var(--navy); border-radius: 5px; }
+    .header-actions .header-cta:hover { color: var(--navy); background: var(--paper); }
+
+    .hero { position: relative; isolation: isolate; min-height: min(650px, 76svh); display: flex; align-items: end; overflow: hidden; background: var(--navy); color: var(--paper); }
+    .hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(7, 15, 39, .92) 0%, rgba(8, 19, 49, .77) 42%, rgba(7, 16, 38, .13) 100%), linear-gradient(0deg, rgba(7, 15, 39, .45), transparent 45%); }
+    .hero-image { position: absolute; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 54%; }
+    .hero-inner { padding-block: 74px 78px; }
+    .hero .eyebrow { color: #d9c4a9; }
+    .hero h1 { max-width: 735px; margin: 0; font-size: clamp(38px, 5.3vw, 70px); line-height: 1.06; font-weight: 700; }
+    .hero h1 span { color: #cbc8ff; }
+    .hero-copy { max-width: 615px; margin: 24px 0 0; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.65; color: #edf0ff; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 32px; }
+    .button { min-height: 48px; padding: 12px 20px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid transparent; border-radius: 5px; font-size: 14px; font-weight: 700; transition: background .2s ease, color .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button:active { transform: translateY(0); }
+    .button svg { width: 17px; height: 17px; flex: none; }
+    .button--light { background: var(--paper); color: var(--navy); }
+    .button--light:hover { background: var(--lavender); }
+    .button--outline { border-color: rgba(255,255,255,.6); color: var(--paper); }
+    .button--outline:hover { background: rgba(255,255,255,.12); }
+    .button--dark { background: var(--navy); color: var(--paper); }
+    .button--dark:hover { background: var(--brand); }
+    .hero-note { max-width: 490px; margin: 17px 0 0; color: #d5dbf5; font-size: 12px; line-height: 1.55; }
+
+    .intro-section { padding-block: 80px 88px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(35px, 7vw, 105px); align-items: start; }
+    .intro-copy { margin: 0; color: var(--ink-muted); font-size: 17px; line-height: 1.85; }
+    .intro-copy strong { color: var(--navy); }
+    .role-strip { margin-top: 38px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .role { padding: 22px 24px 24px 0; }
+    .role + .role { padding-left: 24px; border-left: 1px solid var(--line); }
+    .role-label { display: block; margin-bottom: 9px; color: var(--brand); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .role p { margin: 0; font-size: 15px; line-height: 1.6; font-weight: 600; }
+
+    .signals-section { padding-block: 74px 82px; background: #f6f7fc; }
+    .signals-layout { display: grid; grid-template-columns: minmax(250px, .7fr) 1.3fr; gap: clamp(30px, 7vw, 95px); }
+    .signals-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin: 0; padding: 0; list-style: none; border-top: 1px solid #d6dcee; }
+    .signals-list li { display: flex; align-items: start; gap: 13px; padding: 18px 0; border-bottom: 1px solid #d6dcee; color: var(--navy); font-size: 14px; line-height: 1.5; font-weight: 500; }
+    .signal-mark { width: 8px; height: 8px; flex: none; margin-top: 7px; border: 2px solid var(--brand); transform: rotate(45deg); }
+
+    .process-section { padding-block: 84px 96px; }
+    .process-list { margin: 42px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--line); }
+    .process-list li { position: relative; min-height: 225px; padding: 26px 24px 10px 0; border-bottom: 1px solid var(--line); }
+    .process-list li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+    .process-number { display: block; margin-bottom: 36px; color: var(--brand); font-size: 13px; font-weight: 700; }
+    .process-list h3 { margin: 0 0 10px; font-size: 16px; line-height: 1.35; }
+    .process-list p { margin: 0; color: var(--ink-muted); font-size: 13px; line-height: 1.65; }
+
+    .flex-section { padding-block: 80px 84px; background: var(--navy); color: var(--paper); }
+    .flex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(35px, 8vw, 115px); align-items: center; }
+    .flex-section .eyebrow { color: #c8b198; }
+    .flex-section .section-lead { color: #d8def2; }
+    .channels { display: flex; flex-wrap: wrap; gap: 10px; align-content: center; }
+    .channels span { padding: 11px 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 4px; color: #f3f4ff; font-size: 13px; }
+    .flex-footnote { margin: 22px 0 0; color: #bfc8e9; font-size: 13px; line-height: 1.6; }
+
+    .earnings-section { padding-block: 85px 93px; }
+    .earnings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 9vw, 130px); align-items: start; }
+    .earnings-note { padding: 28px 30px; border-left: 3px solid var(--gold); background: var(--lavender); }
+    .earnings-note h3 { margin: 0 0 12px; font-size: 18px; }
+    .earnings-note p { margin: 0; color: #364362; font-size: 14px; line-height: 1.75; }
+    .earnings-note p + p { margin-top: 13px; }
+    .rule-list { margin: 29px 0 0; padding: 0; list-style: none; }
+    .rule-list li { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.6; }
+    .rule-list li:first-child { border-top: 1px solid var(--line); }
+    .rule-list strong { color: var(--brand); }
+
+    .fit-section { padding-block: 80px 88px; background: #f6f7fc; }
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(35px, 9vw, 125px); }
+    .fit-list { margin: 23px 0 0; padding: 0; list-style: none; }
+    .fit-list li { padding: 14px 0; border-bottom: 1px solid #d9ddec; font-size: 15px; line-height: 1.5; }
+    .fit-list li::before { content: "+"; margin-right: 13px; color: var(--brand); font-size: 18px; font-weight: 700; }
+    .fit-callout { padding: 27px 30px; align-self: center; border: 1px solid #d6dcee; background: var(--paper); }
+    .fit-callout p { margin: 0; font-size: 18px; line-height: 1.7; }
+    .fit-callout strong { color: var(--brand); }
+
+    .faq-section { padding-block: 85px 95px; }
+    .faq-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(35px, 8vw, 110px); }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { position: relative; padding: 19px 40px 19px 0; cursor: pointer; font-size: 15px; font-weight: 600; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: "+"; position: absolute; top: 17px; right: 5px; color: var(--brand); font-size: 22px; font-weight: 400; line-height: 1; }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list p { margin: -1px 35px 22px 0; color: var(--ink-muted); font-size: 14px; line-height: 1.75; }
+
+    .closing { padding-block: 76px 84px; color: var(--paper); background: var(--brand); }
+    .closing-inner { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
+    .closing .eyebrow { color: #e0d3c1; }
+    .closing .section-heading { max-width: 685px; }
+    .closing p:not(.eyebrow) { max-width: 650px; margin: 16px 0 0; color: #e5e5ff; font-size: 15px; line-height: 1.7; }
+    .closing .button { flex: none; }
+    .site-footer { padding-block: 29px; border-top: 1px solid rgba(255,255,255,.2); background: var(--navy); color: #c8d0ec; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; }
+    .footer-inner a:hover { color: var(--paper); }
+
+    @media (max-width: 900px) {
+      .process-list { grid-template-columns: repeat(2, 1fr); }
+      .process-list li:nth-child(odd) { padding-left: 0; border-left: 0; }
+      .process-list li:nth-child(n+3) { border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 36px, 1160px); }
+      .header-inner { min-height: 70px; }
+      .brand-link { width: 144px; height: 48px; }
+      .brand-link img { width: 187px; left: -19px; top: -27px; }
+      .header-actions { gap: 0; }
+      .header-actions .header-cta { padding: 9px 11px; font-size: 12px; }
+      .header-actions a:not(.header-cta) { display: none; }
+      .hero { min-height: 595px; }
+      .hero::after { background: linear-gradient(0deg, rgba(7, 15, 39, .96) 0%, rgba(8, 19, 49, .67) 62%, rgba(7, 16, 38, .23) 100%); }
+      .hero-image { object-position: 52% center; }
+      .hero-inner { padding-block: 58px 62px; }
+      .hero h1 { font-size: clamp(34px, 9.6vw, 52px); }
+      .intro-section, .signals-section, .process-section, .flex-section, .earnings-section, .fit-section, .faq-section { padding-block: 63px 70px; }
+      .intro-grid, .signals-layout, .flex-grid, .earnings-grid, .fit-grid, .faq-grid { grid-template-columns: 1fr; gap: 27px; }
+      .intro-copy { font-size: 15px; }
+      .role-strip { margin-top: 28px; }
+      .signals-list { gap: 0 18px; }
+      .process-list { margin-top: 30px; }
+      .process-list li { min-height: 205px; }
+      .process-number { margin-bottom: 24px; }
+      .closing { padding-block: 62px 68px; }
+      .closing-inner { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 450px) {
+      .hero { min-height: 630px; }
+      .hero-inner { padding-block: 40px 48px; }
+      .hero-actions { align-items: stretch; flex-direction: column; gap: 10px; }
+      .hero-actions .button { width: 100%; }
+      .role-strip, .signals-list { grid-template-columns: 1fr; }
+      .role + .role { padding: 22px 0; border-left: 0; border-top: 1px solid var(--line); }
+      .role { padding-bottom: 22px; }
+      .process-list { grid-template-columns: 1fr; }
+      .process-list li, .process-list li + li { min-height: auto; padding: 20px 0 23px; border-left: 0; }
+      .process-list li + li { border-top: 1px solid var(--line); }
+      .process-number { margin-bottom: 10px; }
+      .earnings-note, .fit-callout { padding: 23px 22px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      :root { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand-link" href="./links.html" aria-label="Check-in IA, voltar para os links"><img src="assets/checkin-ia-identity.png" width="1559" height="1009" alt=""></a>
+      <nav class="header-actions" aria-label="Navegação principal">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#remuneracao">Remuneração</a>
+        <a class="header-cta" href="#comecar">Tenho interesse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/checkin-ia-property.jpg" width="1600" height="896" alt="" fetchpriority="high">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Check-in IA / Programa de parceiros</p>
+        <h1 id="hero-title">Parcerias que aproximam a <span>hotelaria</span> de novas soluções.</h1>
+        <p class="hero-copy">Você identifica uma oportunidade em um negócio de hospedagem. A Check-in IA cuida do diagnóstico, da proposta, da tecnologia e da entrega.</p>
+        <div class="hero-actions">
+          <a class="button button--light" href="#como-funciona">Entenda como funciona <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14m7-7-7 7-7-7"/></svg></a>
+          <a class="button button--outline" href="#comecar">Quero ser parceiro</a>
+        </div>
+        <p class="hero-note">Uma possibilidade de atuação complementar, sem necessidade de desenvolver ou implementar tecnologia.</p>
+      </div>
+    </section>
+
+    <section class="intro-section" aria-labelledby="intro-title">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div><p class="eyebrow">O ponto de partida</p><h2 class="section-heading" id="intro-title">Você conhece a oportunidade. Nós construímos a solução.</h2></div>
+          <p class="intro-copy">Hotéis, pousadas e outras operações de hospedagem convivem com reservas, mensagens, pagamentos e rotinas espalhados. <strong>O papel do parceiro é perceber onde há espaço para melhorar e abrir uma conversa qualificada.</strong> Você não precisa dominar IA, automações ou sistemas para começar.</p>
+        </div>
+        <div class="role-strip" aria-label="Responsabilidades da parceria">
+          <div class="role"><span class="role-label">Seu papel</span><p>Identificar negócios, conversar com quem decide e fazer a conexão.</p></div>
+          <div class="role"><span class="role-label">Nosso papel</span><p>Diagnosticar, propor, negociar e executar a solução adequada.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signals-section" aria-labelledby="signals-title">
+      <div class="wrap signals-layout">
+        <div><p class="eyebrow">Onde há oportunidade</p><h2 class="section-heading" id="signals-title">Aprenda a reconhecer sinais.</h2><p class="section-lead">Uma boa indicação começa com atenção à operação, não com uma apresentação técnica.</p></div>
+        <ul class="signals-list">
+          <li><span class="signal-mark" aria-hidden="true"></span>Atendimento sobrecarregado</li>
+          <li><span class="signal-mark" aria-hidden="true"></span>Reservas tratadas manualmente</li>
+          <li><span class="signal-mark" aria-hidden="true"></span>Dependência excessiva do WhatsApp</li>
+          <li><span class="signal-mark" aria-hidden="true"></span>Falta de acompanhamento comercial</li>
+          <li><span class="signal-mark" aria-hidden="true"></span>Financeiro e dados fragmentados</li>
+          <li><span class="signal-mark" aria-hidden="true"></span>Retrabalho entre equipes e canais</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="process-section" id="como-funciona" aria-labelledby="process-title">
+      <div class="wrap">
+        <p class="eyebrow">O caminho da indicação</p>
+        <h2 class="section-heading" id="process-title">Um processo claro, do primeiro contato à entrega.</h2>
+        <ol class="process-list">
+          <li><span class="process-number">01 / Identificar</span><h3>Encontre um negócio</h3><p>Hotel, pousada, resort, cabana ou outra operação de hospedagem com potencial de melhoria.</p></li>
+          <li><span class="process-number">02 / Conversar</span><h3>Entenda o cenário</h3><p>Fale com a pessoa responsável e descubra quais desafios aparecem no dia a dia.</p></li>
+          <li><span class="process-number">03 / Conectar</span><h3>Faça a introdução</h3><p>Apresente a Check-in IA e registre a oportunidade conforme as regras do programa.</p></li>
+          <li><span class="process-number">04 / Desenvolver</span><h3>Nós assumimos a solução</h3><p>O time avalia o caso, estrutura a proposta, negocia e conduz a implementação.</p></li>
+          <li><span class="process-number">05 / Remunerar</span><h3>Receba conforme a modalidade</h3><p>Quando a oportunidade se torna um cliente elegível, aplica-se a regra comercial acordada.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="flex-section" aria-labelledby="flex-title">
+      <div class="wrap flex-grid">
+        <div><p class="eyebrow">Seu ritmo, sua rede</p><h2 class="section-heading" id="flex-title">A parceria pode começar de onde você está.</h2><p class="section-lead">Você pode prospectar na sua cidade ou em outras regiões, usando canais digitais, contatos profissionais e indicações. É possível começar com algumas horas por semana, conciliando a atividade com sua rotina.</p></div>
+        <div><div class="channels" aria-label="Exemplos de canais para encontrar oportunidades"><span>Contatos locais</span><span>Indicações</span><span>Instagram</span><span>LinkedIn</span><span>Google</span><span>Eventos</span><span>WhatsApp</span><span>Prospecção ativa</span></div><p class="flex-footnote">Os canais são exemplos. Cada parceiro organiza sua atuação de acordo com seu contexto e com as diretrizes comerciais combinadas.</p></div>
+      </div>
+    </section>
+
+    <section class="earnings-section" id="remuneracao" aria-labelledby="earnings-title">
+      <div class="wrap earnings-grid">
+        <div><p class="eyebrow">Remuneração</p><h2 class="section-heading" id="earnings-title">O retorno acompanha a oportunidade e sua participação.</h2><p class="section-lead">A remuneração é definida pela modalidade de parceria e pelas condições comerciais vigentes. Ela pode variar conforme a solução, o projeto e o envolvimento do parceiro.</p><ul class="rule-list"><li><strong>Indicação:</strong> conexão qualificada com um potencial cliente.</li><li><strong>Atuação ampliada:</strong> participação comercial mais ativa, quando acordada.</li><li><strong>Carteira ativa:</strong> outras modalidades podem existir mediante critérios específicos.</li></ul></div>
+        <aside class="earnings-note"><h3>Sem promessas de ganho fixo</h3><p>Valores como R$ 1 mil, R$ 3 mil ou R$ 5 mil por mês são apenas possibilidades ilustrativas. Não representam renda garantida, comissão automática ou previsão de resultado.</p><p>Antes de iniciar, o parceiro conhece os critérios de elegibilidade, o momento do pagamento e as condições aplicáveis à sua modalidade.</p></aside>
+      </div>
+    </section>
+
+    <section class="fit-section" aria-labelledby="fit-title">
+      <div class="wrap fit-grid">
+        <div><p class="eyebrow">Para quem faz sentido</p><h2 class="section-heading" id="fit-title">Gente que sabe criar boas conexões.</h2><ul class="fit-list"><li>Profissionais com acesso ao setor de hotelaria e hospedagem</li><li>Pessoas com experiência em vendas, atendimento ou relacionamento B2B</li><li>Consultores e prestadores que já conversam com negócios de hospedagem</li><li>Quem tem iniciativa para pesquisar, abordar e acompanhar oportunidades</li></ul></div>
+        <div class="fit-callout"><p>Imagine uma pousada que recebe pedidos pelo WhatsApp, controla reservas em planilhas e perde tempo reunindo informações. <strong>Você não precisa saber resolver tudo.</strong> Precisa reconhecer a oportunidade e aproximar as pessoas certas.</p></div>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <div><p class="eyebrow">Perguntas frequentes</p><h2 class="section-heading" id="faq-title">Antes de começar.</h2></div>
+        <div class="faq-list">
+          <details><summary>Preciso trabalhar em tempo integral?</summary><p>Não. A atuação pode começar em paralelo a outras atividades. O volume de oportunidades depende do tempo e da forma de prospecção de cada parceiro.</p></details>
+          <details><summary>Preciso entender de IA ou automação?</summary><p>Não é necessário desenvolver a solução. O essencial é identificar um possível desafio de negócio e fazer uma introdução qualificada. A parte técnica é conduzida pela Check-in IA.</p></details>
+          <details><summary>Quando uma indicação gera remuneração?</summary><p>Quando a oportunidade atende aos critérios da modalidade acordada e se torna um cliente elegível, conforme as regras comerciais vigentes. A simples apresentação de um contato não garante pagamento.</p></details>
+          <details><summary>Existe renda recorrente ou contratação futura?</summary><p>Podem existir modalidades adicionais para carteiras ativas, sujeitas a critérios próprios. Uma eventual contratação profissional é uma relação separada e não faz parte de uma promessa do programa.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="comecar" aria-labelledby="closing-title">
+      <div class="wrap closing-inner">
+        <div><p class="eyebrow">Próximo passo</p><h2 class="section-heading" id="closing-title">Vamos conversar sobre a sua forma de participar.</h2><p>Conte sua região, sua experiência e como pretende encontrar oportunidades. A equipe pode explicar as modalidades e os critérios comerciais disponíveis.</p></div>
+        <a class="button button--light" href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20programa%20de%20parceiros%20da%20Check-in%20IA.%20Minha%20cidade%20%C3%A9%3A%20" target="_blank" rel="noopener noreferrer">Quero ser parceiro <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><span>Check-in IA · Estratégia, tecnologia e hospitalidade</span><a href="./links.html">Voltar aos links</a></div></footer>
+</body>
+</html>
